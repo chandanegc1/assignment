@@ -25,19 +25,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var h6Element = liElements[2].getElementsByTagName('h6')[0];
         var spanElement = h6Element.getElementsByTagName('span')[0];
-        spanElement.textContent= data.user.about.address
+        spanElement.textContent= data.user.about.address;
 
         var h6Element = liElements[3].getElementsByTagName('h6')[0];
         var spanElement = h6Element.getElementsByTagName('span')[0];
-        spanElement.textContent= data.user.email
+        spanElement.textContent= data.user.email;
 
         var h6Element = liElements[4].getElementsByTagName('h6')[0];
         var spanElement = h6Element.getElementsByTagName('span')[0];
-        spanElement.textContent= data.user.about.phoneNumber
+        spanElement.textContent= data.user.about.phoneNumber;
 
         var h6Element = liElements[5].getElementsByTagName('h6')[0];
         var spanElement = h6Element.getElementsByTagName('span')[0];
-        spanElement.textContent= data.user.about.title
+        spanElement.textContent= data.user.about.title;
 
         const skill = data.user.skills;
         for(i = 0; i<4;i++){
@@ -82,7 +82,16 @@ document.addEventListener("DOMContentLoaded", function() {
         articlesElement.childNodes[5].textContent =  article[l].name;
         articlesElement.childNodes[9].textContent =  article[l].review; 
         }
-            
+        
+        x =document.getElementById('phnNo');
+        x.textContent = data.user.about.phoneNumber;
+        x.setAttribute('href' ,data.user.about.phoneNumber);
+        x =document.getElementById('eml');
+        x.textContent = data.user.email;
+        x.setAttribute('href' ,data.user.email);
+        document.getElementById('lctn').textContent = data.user.about.address;
+        document.getElementById('descr').textContent = data.user.about.description;
+        document.getElementById('quote').textContent = data.user.about.quote;
       })
       .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
